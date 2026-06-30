@@ -38,7 +38,6 @@ All architectures share one `EvalState`, one LLM client, and the same prompts wh
 ├── retry_failed.py          # Re-runs only the errored rows of a result CSV
 ├── check_csv.py             # Quick inspector for a single result CSV
 ├── requirements.txt
-├── .env                     # Holds the endpoint API key (not committed)
 ├── src/
 │   ├── llm_client.py        # Sole API entry point; handles the Qwen3 thinking/JSON quirk + token accounting
 │   ├── state.py             # Shared LangGraph TypedDict state
@@ -108,7 +107,7 @@ Omitting `--arch`, `--domain`, or `--difficulty` runs all of that dimension. Res
 ### Recover errored rows
 
 ```bash
-python retry_failed.py results/raw/level2b_hotpotqa_hard_cap2.csv
+python retry_failed.py results/raw/level2b_hotpotqa_hard_k3_cap2.csv
 ```
 
 ### Aggregate and plot
