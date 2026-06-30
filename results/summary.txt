@@ -1,0 +1,140 @@
+=== ACCURACY (EM and F1) ===
+Architecture  top_k  Domain    Difficulty  N_ok  N_total  EM     F1   
+------------  -----  --------  ----------  ----  -------  -----  -----
+level1        3      math      easy        30    30       0.967    -  
+level1        3      math      hard        30    30       0.733    -  
+level1        3      hotpotqa  easy        30    30       0.567  0.675
+level1        3      hotpotqa  hard        30    30       0.833  0.934
+level2a       3      math      easy        30    30       0.967    -  
+level2a       3      math      hard        30    30       0.667    -  
+level2a       3      hotpotqa  easy        30    30       0.500  0.616
+level2a       3      hotpotqa  hard        30    30       0.700  0.717
+level2a       10     hotpotqa  easy        30    30       0.600  0.738
+level2a       10     hotpotqa  hard        30    30       0.733  0.814
+level2b       3      math      easy        30    30       0.967    -  
+level2b       3      math      hard        30    30       0.733    -  
+level2b       3      hotpotqa  easy        30    30       0.533  0.642
+level2b       3      hotpotqa  hard        30    30       0.567  0.667
+level2b       10     hotpotqa  easy        30    30       0.633  0.720
+level2b       10     hotpotqa  hard        30    30       0.767  0.867
+level3        3      math      easy        30    30       0.967    -  
+level3        3      math      hard        30    30       0.733    -  
+level3        3      hotpotqa  easy        30    30       0.533  0.642
+level3        3      hotpotqa  hard        30    30       0.533  0.589
+level3        10     hotpotqa  easy        30    30       0.633  0.720
+level3        10     hotpotqa  hard        30    30       0.767  0.867
+
+=== ACCURACY PIVOT (EM) ===
+Architecture  k   math/easy  math/hard  hotp/easy  hotp/hard
+------------  --  ---------  ---------  ---------  ---------
+level1        3   0.967      0.733      0.567      0.833    
+level2a       3   0.967      0.667      0.500      0.700    
+level2a       10    -          -        0.600      0.733    
+level2b       3   0.967      0.733      0.533      0.567    
+level2b       10    -          -        0.633      0.767    
+level3        3   0.967      0.733      0.533      0.533    
+level3        10    -          -        0.633      0.767    
+
+=== TOKEN USAGE (avg per question, successful rows only) ===
+Architecture  k   Domain    Difficulty  Avg_Input  Avg_Output  Avg_Total
+------------  --  --------  ----------  ---------  ----------  ---------
+level1        3   math      easy        105        655         760      
+level1        3   math      hard        157        1197        1354     
+level1        3   hotpotqa  easy        1409       3           1413     
+level1        3   hotpotqa  hard        1570       6           1576     
+level2a       3   math      easy        370        749         1119     
+level2a       3   math      hard        488        1356        1844     
+level2a       3   hotpotqa  easy        2132       102         2235     
+level2a       3   hotpotqa  hard        2299       118         2417     
+level2a       10  hotpotqa  easy        2978       62          3040     
+level2a       10  hotpotqa  hard        3293       62          3354     
+level2b       3   math      easy        996        680         1677     
+level2b       3   math      hard        1974       1377        3352     
+level2b       3   hotpotqa  easy        1512       111         1623     
+level2b       3   hotpotqa  hard        1681       74          1755     
+level2b       10  hotpotqa  easy        3031       29          3060     
+level2b       10  hotpotqa  hard        3662       94          3757     
+level3        3   math      easy        1029       687         1716     
+level3        3   math      hard        1839       1304        3143     
+level3        3   hotpotqa  easy        1242       37          1279     
+level3        3   hotpotqa  hard        1436       44          1480     
+level3        10  hotpotqa  easy        3031       29          3060     
+level3        10  hotpotqa  hard        3782       101         3883     
+
+=== SPEED (avg wall-clock seconds per question, all rows) ===
+Architecture  k   Domain    Difficulty  Avg_Elapsed_s
+------------  --  --------  ----------  -------------
+level1        3   math      easy        20.7         
+level1        3   math      hard        36.8         
+level1        3   hotpotqa  easy        0.4          
+level1        3   hotpotqa  hard        0.5          
+level2a       3   math      easy        23.4         
+level2a       3   math      hard        41.4         
+level2a       3   hotpotqa  easy        3.8          
+level2a       3   hotpotqa  hard        4.1          
+level2a       10  hotpotqa  easy        1.9          
+level2a       10  hotpotqa  hard        1.9          
+level2b       3   math      easy        22.1         
+level2b       3   math      hard        41.1         
+level2b       3   hotpotqa  easy        8.4          
+level2b       3   hotpotqa  hard        13.8         
+level2b       10  hotpotqa  easy        1.2          
+level2b       10  hotpotqa  hard        2.5          
+level3        3   math      easy        14.8         
+level3        3   math      hard        27.7         
+level3        3   hotpotqa  easy        1.3          
+level3        3   hotpotqa  hard        1.4          
+level3        10  hotpotqa  easy        1.2          
+level3        10  hotpotqa  hard        2.3          
+
+=== GRAPH STEPS (avg per question, successful rows only) ===
+Architecture  k   Domain    Difficulty  Avg_Steps
+------------  --  --------  ----------  ---------
+level1        3   math      easy        1.00     
+level1        3   math      hard        1.00     
+level1        3   hotpotqa  easy        1.00     
+level1        3   hotpotqa  hard        1.00     
+level2a       3   math      easy        2.00     
+level2a       3   math      hard        2.00     
+level2a       3   hotpotqa  easy        2.00     
+level2a       3   hotpotqa  hard        2.00     
+level2a       10  hotpotqa  easy        2.00     
+level2a       10  hotpotqa  hard        2.00     
+level2b       3   math      easy        2.00     
+level2b       3   math      hard        2.13     
+level2b       3   hotpotqa  easy        2.20     
+level2b       3   hotpotqa  hard        2.27     
+level2b       10  hotpotqa  easy        2.00     
+level2b       10  hotpotqa  hard        2.13     
+level3        3   math      easy        2.00     
+level3        3   math      hard        2.07     
+level3        3   hotpotqa  easy        3.07     
+level3        3   hotpotqa  hard        3.17     
+level3        10  hotpotqa  easy        2.00     
+level3        10  hotpotqa  hard        3.03     
+
+=== ERROR RATES ===
+Architecture  k   Domain    Difficulty  Errors  Total  Error%
+------------  --  --------  ----------  ------  -----  ------
+level1        3   math      easy        0       30     0.0%  
+level1        3   math      hard        0       30     0.0%  
+level1        3   hotpotqa  easy        0       30     0.0%  
+level1        3   hotpotqa  hard        0       30     0.0%  
+level2a       3   math      easy        0       30     0.0%  
+level2a       3   math      hard        0       30     0.0%  
+level2a       3   hotpotqa  easy        0       30     0.0%  
+level2a       3   hotpotqa  hard        0       30     0.0%  
+level2a       10  hotpotqa  easy        0       30     0.0%  
+level2a       10  hotpotqa  hard        0       30     0.0%  
+level2b       3   math      easy        0       30     0.0%  
+level2b       3   math      hard        0       30     0.0%  
+level2b       3   hotpotqa  easy        0       30     0.0%  
+level2b       3   hotpotqa  hard        0       30     0.0%  
+level2b       10  hotpotqa  easy        0       30     0.0%  
+level2b       10  hotpotqa  hard        0       30     0.0%  
+level3        3   math      easy        0       30     0.0%  
+level3        3   math      hard        0       30     0.0%  
+level3        3   hotpotqa  easy        0       30     0.0%  
+level3        3   hotpotqa  hard        0       30     0.0%  
+level3        10  hotpotqa  easy        0       30     0.0%  
+level3        10  hotpotqa  hard        0       30     0.0%  
