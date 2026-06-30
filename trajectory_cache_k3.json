@@ -1,0 +1,14 @@
+[
+  {
+    "domain": "hotpotqa",
+    "difficulty": "hard",
+    "question_snippet": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+    "summary": "When the provided context lacks the specific information required to answer the question, explicitly state that the answer cannot be verified from the text rather than inferring or hallucinating details. Always prioritize strict adherence to the available evidence over external knowledge or assumptions."
+  },
+  {
+    "domain": "hotpotqa",
+    "difficulty": "hard",
+    "question_snippet": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
+    "summary": "When a candidate answer's introduction date falls after the historical period specified in the question, immediately reject it as anachronistic. Always verify that the entity existed and was in active service during the timeframe mentioned in the prompt."
+  }
+]

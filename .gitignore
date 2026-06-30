@@ -4,4 +4,3 @@ __pycache__/
 results/raw/
 results/figures/
 *.pyc
-trajectory_cache*.json
