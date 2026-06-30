@@ -38,6 +38,7 @@ All architectures share one `EvalState`, one LLM client, and the same prompts wh
 ├── retry_failed.py          # Re-runs only the errored rows of a result CSV
 ├── check_csv.py             # Quick inspector for a single result CSV
 ├── requirements.txt
+├── .env                     # Holds the endpoint API key (not committed)
 ├── src/
 │   ├── llm_client.py        # Sole API entry point; handles the Qwen3 thinking/JSON quirk + token accounting
 │   ├── state.py             # Shared LangGraph TypedDict state
@@ -107,7 +108,7 @@ Omitting `--arch`, `--domain`, or `--difficulty` runs all of that dimension. Res
 ### Recover errored rows
 
 ```bash
-python retry_failed.py results/raw/level2b_hotpotqa_hard_k3_cap2.csv
+python retry_failed.py results/raw/level2b_hotpotqa_hard_cap2.csv
 ```
 
 ### Aggregate and plot
@@ -132,7 +133,7 @@ python plot.py        # writes the three figures to results/figures/
 
 ## Evaluation matrix
 
-Core matrix: **4 architectures × 2 domains × 2 difficulties × 30 samples**, at retrieval *k* = 3, plus a *k* = 3 vs. *k* = 10 retrieval ablation on all HotpotQA cells for L2A/L2B/L3. The same sampled questions are reused across architectures within a cell, so comparisons are paired. Every reported cell is a complete 30/30 run with a 0% error rate.
+Core matrix: **4 architectures × 2 domains × 2 difficulties × 30 samples**, at retrieval *k* = 3, plus a *k* = 3 vs. *k* = 10 retrieval ablation on all HotpotQA cells for L2A/L2B/L3. The same sampled questions are reused across architectures within a cell, so comparisons are paired. Each cell is a 30-sample run with no recorded errors (a single row in one cell returned an empty response and is scored as a miss).
 
 Per-row metrics: Exact Match, F1 (HotpotQA), input/output tokens, graph steps, wall-clock seconds.
 
